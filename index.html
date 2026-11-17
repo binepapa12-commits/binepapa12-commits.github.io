@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>빈이파파 AI 콘텐츠 대행 — 무료 샘플부터 받아 보세요</title>
-<meta name="description" content="채널 100개 이상을 직접 운영한 빈이파파가 AI로 기획·대본·영상·편집·자막까지 대신 만들어 드립니다. 업종 맞춤 샘플 1편을 먼저 무료로 받아 보세요.">
+<title>콘텐츠 발전소 — AI 숏폼·브랜드 영상 제작 대행 | 무료 샘플부터</title>
+<meta name="description" content="콘텐츠 발전소는 채널 100개 이상을 직접 운영한 크리에이터 빈이파파가 AI로 기획·대본·영상·편집·자막까지 대신 만들어 드립니다. 업종 맞춤 샘플 1편을 먼저 무료로 받아 보세요.">
 <style>
   :root{
     --bg:#0B0D12; --bg2:#10131a; --card:#171A22; --line:#252a35;
@@ -94,6 +94,21 @@
   .reviews{display:grid;gap:10px;margin-top:30px}
   .review{border:1px dashed #333a47;border-radius:16px;padding:26px 18px;color:var(--dim);font-size:14px;background:repeating-linear-gradient(45deg,transparent 0 10px,rgba(255,255,255,.015) 10px 20px)}
   .review b{display:block;color:var(--sub);margin-bottom:2px}
+  .samples{margin-top:44px}
+  .samples-h{font-size:22px;line-height:1.4;font-weight:900;letter-spacing:-.03em;margin-bottom:10px}
+  .ai-flag{display:inline-block;font-size:12.5px;font-weight:800;color:var(--mint);background:var(--mint-d);border:1px solid rgba(57,255,138,.35);border-radius:999px;padding:6px 14px;margin-bottom:22px}
+  .sample-grid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;text-align:left}
+  .sample{flex:0 0 62%;scroll-snap-align:start;background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  .sample .thumb{position:relative;aspect-ratio:9/16;background:#0f1218}
+  .sample .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .sample .play{position:absolute;left:50%;top:50%;width:52px;height:52px;margin:-26px 0 0 -26px;border-radius:50%;background:rgba(255,255,255,.88);box-shadow:0 4px 18px rgba(0,0,0,.35)}
+  .sample .play::after{content:"";position:absolute;left:21px;top:16px;border-left:15px solid #06150c;border-top:10px solid transparent;border-bottom:10px solid transparent}
+  .sample .thumb em{position:absolute;left:10px;bottom:10px;font-style:normal;font-size:11px;font-weight:800;color:#fff;background:rgba(0,0,0,.62);border-radius:999px;padding:4px 10px}
+  .sample .cap{padding:14px 16px 16px}
+  .sample .cap b{display:block;font-size:16px;color:var(--mint);margin-bottom:4px}
+  .sample .cap p{font-size:13.5px;color:var(--sub);line-height:1.6}
+  .sample .cap small{display:block;margin-top:8px;font-size:11.5px;color:var(--dim)}
+  @media(min-width:760px){.sample-grid{overflow:visible}.sample{flex:1 1 0}}
 
   /* 8 대표 소개 */
   .photo{width:132px;height:132px;border-radius:50%;margin:0 auto 22px;border:2px solid var(--mint);background:var(--card);display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:13px;box-shadow:0 0 40px rgba(57,255,138,.18)}
@@ -179,13 +194,67 @@
     .fab{display:none}
     body{padding-bottom:0}
   }
+
+  /* 상단 바 */
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(11,13,18,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topbar-in{max-width:1080px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:900;font-size:17px;letter-spacing:-.03em}
+  .logo-mark{width:30px;height:30px}
+  .topbar nav{display:flex;align-items:center;gap:16px;font-size:14px;color:var(--sub)}
+  .topbar nav a:hover{color:var(--text)}
+  .topbar .nav-cta{color:#06150c;background:var(--mint);font-weight:800;padding:7px 14px;border-radius:999px}
+  .hero-brand{display:inline-block;font-size:13px;color:var(--sub);border:1px solid var(--line);border-radius:999px;padding:6px 14px;margin-bottom:22px;position:relative}
+  .hero-brand b{color:var(--mint)}
+  .foot-brand{font-weight:900;color:var(--text)!important;font-size:15px}
+  .foot-brand span{font-size:10.5px;letter-spacing:.18em;color:var(--dim);margin-left:6px}
+  @media(max-width:480px){.topbar nav a:not(.nav-cta){display:none}}
+
+  /* 포트폴리오 · 샘플 영상 자리 */
+  .wide-wrap{max-width:1080px}
+  .tabs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:30px}
+  .tab{font:inherit;font-size:14px;font-weight:800;color:var(--sub);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:9px 18px;cursor:pointer}
+  .tab.on{background:var(--mint);color:#06150c;border-color:var(--mint)}
+  .pf-group{margin-bottom:40px;text-align:left}
+  .pf-h{font-size:20px;font-weight:900;letter-spacing:-.03em;margin-bottom:16px}
+  .vgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  @media(min-width:760px){.vgrid{grid-template-columns:repeat(4,1fr)}}
+  .vrow{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+  .vrow .vslot{flex:0 0 82%;scroll-snap-align:start}
+  @media(min-width:760px){.vrow .vslot{flex:0 0 calc(50% - 7px)}.vrow.three .vslot{flex:1 1 0}}
+  @media(min-width:760px){.pf-group .vrow{display:grid;grid-template-columns:1fr 1fr;overflow:visible}}
+  .vslot{text-align:left}
+  .vbox{position:relative;border-radius:18px;overflow:hidden;background:linear-gradient(160deg,#1b2030,#0f1218);border:1px dashed #333a48;cursor:pointer}
+  .short .vbox{aspect-ratio:9/16}
+  .wide .vbox{aspect-ratio:16/9}
+  .vbox img,.vbox video,.vbox iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0}
+  .vbox img{opacity:.9}
+  .vbox img + .ph{display:none}
+  .vbox .ph{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);margin-top:46px;text-align:center;font-size:12.5px;font-weight:700;color:var(--dim);line-height:1.5}
+  .vbox .play{position:absolute;left:50%;top:50%;width:50px;height:50px;margin:-25px 0 0 -25px;border-radius:50%;background:rgba(255,255,255,.9);box-shadow:0 4px 18px rgba(0,0,0,.35)}
+  .vbox .play::after{content:"";position:absolute;left:20px;top:15px;border-left:14px solid #06150c;border-top:10px solid transparent;border-bottom:10px solid transparent}
+  .vbox em{position:absolute;left:10px;top:10px;font-style:normal;font-size:11.5px;font-weight:800;color:#fff;background:rgba(0,0,0,.6);border-radius:999px;padding:4px 10px}
+  .vslot.filled .vbox{border-style:solid;border-color:var(--line)}
+  .vslot.filled .ph{display:none}
+  .vslot.playing .play,.vslot.playing em{display:none}
+  .vcap{margin-top:10px;font-size:13px;color:var(--sub);line-height:1.5}
+  .vcap b{display:block;font-size:14.5px;color:var(--text);margin-bottom:2px}
+  .creator-v{margin-top:40px}
+  .cv-h{font-size:15px;font-weight:800;margin-bottom:14px;text-align:left}
 </style>
 </head>
-<body>
+<body id="top">
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="#top"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><path d="M9 5.5c0-2.2 2.4-3.6 4.3-2.5l22.5 13.6c1.9 1.1 1.9 3.8 0 4.9L13.3 35.1C11.4 36.2 9 34.8 9 32.6z" fill="#13235a" stroke="#ffffff" stroke-opacity=".35" stroke-width="1.2"/><path d="M21.5 8.5 13 22h6.5l-3 10.5L27 17.5h-6.8z" fill="#FFE11A"/></svg><span class="brand-ko">콘텐츠 발전소</span></a>
+    <nav><a href="#portfolio">작업물</a><a href="#price">가격</a><a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSd1qi2s91iR-OJTnCm0PlbsiFs2QDVlqBCcyeTWVgJ8qmVJ5g/viewform" target="_blank" rel="noopener">무료 샘플</a></nav>
+  </div>
+</header>
+
 
 <!-- 1. 히어로 : 통념 → 반문 → 무료 입구 -->
 <section class="hero">
   <div class="wrap">
+    <p class="hero-brand">AI 숏폼 · 브랜드 영상 제작 <b>콘텐츠 발전소</b></p>
     <p class="q">AI로 영상 만들면 누구나 쉽게 된다는데,</p>
     <h1>왜 우리 가게 계정은<br><span class="m">세 편 올리고 멈췄을까요?</span></h1>
     <div class="dots">· · ·</div>
@@ -241,10 +310,10 @@
   </div>
 </section>
 
-<!-- 5. 왜 빈이파파 / 범위 -->
+<!-- 5. 왜 콘텐츠 발전소 / 범위 -->
 <section>
   <div class="wrap">
-    <span class="label">WHY BINEPAPA</span>
+    <span class="label">WHY 콘텐츠 발전소</span>
     <h2>남의 채널 전에,<br>내 채널로 먼저 해 봤습니다.</h2>
     <p class="lead">강의로 가르치기 전에 직접 운영하며 쌓은 방식 그대로 만듭니다.</p>
     <div class="points">
@@ -253,6 +322,77 @@
       <div class="point"><span class="tag">POINT 03 — 마무리</span><h3>끝까지 보게<br>다듬습니다.</h3><p>컷 편집·효과음·음악·자막·썸네일 문구까지 플랫폼에 맞게 마무리합니다.</p><ul><li>컷 편집·효과음</li><li>읽기 쉬운 자막</li><li>썸네일 문구</li></ul></div>
     </div>
     <div class="scope"><span><i>01</i>기획</span><span><i>02</i>대본</span><span><i>03</i>AI 영상</span><span><i>04</i>편집</span><span><i>05</i>자막</span></div>
+  </div>
+</section>
+
+<!-- 5-1. 포트폴리오 (샘플 영상 자리: data-yt 에 유튜브 ID 또는 data-src 에 mp4 경로를 넣으면 재생됨) -->
+<section class="alt" id="portfolio">
+  <div class="wrap wide-wrap">
+    <span class="label">PORTFOLIO</span>
+    <h2>말보다 영상으로<br><span class="m">먼저 보여드립니다.</span></h2>
+    <p class="lead">업종별로 이런 영상을 만들어 드립니다.</p>
+    <div class="tabs" role="tablist">
+      <button class="tab on" data-f="all">전체</button><button class="tab" data-f="short">AI 숏폼 / 릴스</button><button class="tab" data-f="brand">AI 브랜드 영상</button>
+    </div>
+    <div class="pf-group" data-g="short">
+      <h3 class="pf-h">숏폼 — 짧을수록 더 멀리 갑니다.</h3>
+      <div class="vgrid">
+        <div class="vslot short" data-cat="short" data-yt="" data-src="samples/nursing_home.mp4">
+          <div class="vbox"><img src="samples/nursing_home.jpg" alt="요양원 보호자 공감형 광고 표지" loading="lazy"><span class="ph">샘플 영상<br>준비 중</span><i class="play"></i><em>요양원 · 40초</em></div>
+          <p class="vcap"><b>요양원</b>보내는 자식의 죄책감을 위로로</p>
+        </div>
+        <div class="vslot short" data-cat="short" data-yt="" data-src="samples/food_asia.mp4">
+          <div class="vbox"><img src="samples/food_asia.jpg" alt="외식 브랜드 시즌 메뉴 광고 표지" loading="lazy"><span class="ph">샘플 영상<br>준비 중</span><i class="play"></i><em>외식 브랜드 · 30초</em></div>
+          <p class="vcap"><b>외식 브랜드</b>시즌 신메뉴를 여행 이야기로</p>
+        </div>
+        <div class="vslot short" data-cat="short" data-yt="" data-src="">
+          <div class="vbox"><img src="samples/beauty.jpg" alt="뷰티샵 샘플 표지" loading="lazy"><span class="ph">샘플 영상<br>준비 중</span><i class="play"></i><em>뷰티샵</em></div>
+          <p class="vcap"><b>뷰티샵</b>이번 달 디자인 고르기</p>
+        </div>
+        <div class="vslot short" data-cat="short" data-yt="" data-src="">
+          <div class="vbox"><img src="samples/academy.jpg" alt="학원 샘플 표지" loading="lazy"><span class="ph">샘플 영상<br>준비 중</span><i class="play"></i><em>학원</em></div>
+          <p class="vcap"><b>학원</b>학부모 질문으로 상담 연결</p>
+        </div>
+        <div class="vslot short" data-cat="short" data-yt="" data-src="">
+          <div class="vbox"><span class="ph">샘플 영상<br>준비 중</span><i class="play"></i><em>병원·의원</em></div>
+          <p class="vcap"><b>병원·의원</b>어려운 시술을 쉽게</p>
+        </div>
+        <div class="vslot short" data-cat="short" data-yt="" data-src="">
+          <div class="vbox"><span class="ph">샘플 영상<br>준비 중</span><i class="play"></i><em>헬스·필라테스</em></div>
+          <p class="vcap"><b>헬스·필라테스</b>전후 변화와 수업 분위기</p>
+        </div>
+        <div class="vslot short" data-cat="short" data-yt="" data-src="">
+          <div class="vbox"><span class="ph">샘플 영상<br>준비 중</span><i class="play"></i><em>쇼핑몰 제품</em></div>
+          <p class="vcap"><b>쇼핑몰 제품</b>사용 장면으로 구매 유도</p>
+        </div>
+        <div class="vslot short" data-cat="short" data-yt="" data-src="">
+          <div class="vbox"><span class="ph">샘플 영상<br>준비 중</span><i class="play"></i><em>캐릭터 정보형</em></div>
+          <p class="vcap"><b>캐릭터 정보형</b>캐릭터가 알려주는 정보</p>
+        </div>
+      </div>
+    </div>
+    <div class="pf-group" data-g="brand">
+      <h3 class="pf-h">브랜드 영상 — 한 편으로 가게를 기억하게.</h3>
+      <div class="vrow">
+        <div class="vslot wide" data-cat="brand" data-yt="" data-src="">
+          <div class="vbox"><span class="ph">샘플 영상 준비 중</span><i class="play"></i><em>브랜드 필름</em></div>
+          <p class="vcap"><b>브랜드 필름</b>브랜드 이야기를 1분 영상으로</p>
+        </div>
+        <div class="vslot wide" data-cat="brand" data-yt="" data-src="">
+          <div class="vbox"><span class="ph">샘플 영상 준비 중</span><i class="play"></i><em>매장 소개 영상</em></div>
+          <p class="vcap"><b>매장 소개 영상</b>처음 오는 손님을 위한 가게 안내</p>
+        </div>
+        <div class="vslot wide" data-cat="brand" data-yt="" data-src="">
+          <div class="vbox"><span class="ph">샘플 영상 준비 중</span><i class="play"></i><em>제품 광고</em></div>
+          <p class="vcap"><b>제품 광고</b>촬영 없이 AI로 만든 광고</p>
+        </div>
+        <div class="vslot wide" data-cat="brand" data-yt="" data-src="">
+          <div class="vbox"><span class="ph">샘플 영상 준비 중</span><i class="play"></i><em>기관·캠페인 영상</em></div>
+          <p class="vcap"><b>기관·캠페인 영상</b>안전수칙·캠페인을 캐릭터로</p>
+        </div>
+      </div>
+    </div>
+    <p class="note">샘플은 제작 방향을 보여드리기 위한 예시입니다. 실제 고객 작업물은 동의를 받은 것만 공개합니다.</p>
   </div>
 </section>
 
@@ -287,9 +427,7 @@
     </div>
     <p class="note">누적 매출은 사업·유튜브 매출 합산 기준입니다. 수익 숫자는 개별 사례이며, 같은 성과를 보장하지 않습니다.</p>
     <div class="reviews">
-      <div class="review"><b>고객 후기 1</b>동의를 받은 후기부터 공개합니다</div>
-      <div class="review"><b>고객 후기 2</b>준비 중</div>
-      <div class="review"><b>제작 사례</b>준비 중</div>
+      <div class="review"><b>고객 후기</b>동의를 받은 후기부터 공개합니다</div>
     </div>
   </div>
 </section>
@@ -298,21 +436,22 @@
 <section class="alt ceo">
   <div class="wrap">
     <div class="photo">대표 사진</div>
-    <p class="hello">안녕하세요.<br>㈜유벤져스 공동대표 빈이파파입니다.</p>
-    <h2>배달하다 시작한 유튜브로<br><span class="m">본업을 바꾼 사람</span></h2>
+    <span class="label">CREATOR</span>
+    <p class="hello">콘텐츠 발전소는<br>㈜유벤져스 공동대표 빈이파파가 직접 이끕니다.</p>
+    <h2>채널 100개를 직접 운영한 크리에이터가<br><span class="m">기획부터 제작까지 직접 만듭니다</span></h2>
     <ul class="bio">
       <li>㈜유벤져스 공동대표 · AI 유튜브 자동화 강의 「빈이파파」</li>
       <li>직접 운영해 본 채널 100개 이상</li>
       <li>누적 수강생 1,000명 이상</li>
     </ul>
     <div class="big"><span>본업 전환 첫해, 2025년 한 해 유튜브 조회수 수익</span><b>2억 8천만 원</b><small>개인 실적 · 개별 사례이며 성과를 보장하지 않습니다</small></div>
-    <div class="story">
-      <p>저는 원래 <strong>건축회사</strong>에 다녔습니다. 아이 둘을 키우는 외벌이 가장이었습니다.</p>
-      <p>큰 사고를 겪고 나서 처음으로 이런 생각을 했습니다. <strong>「내가 없으면, 우리 가족은?」</strong></p>
-      <p>회사를 나와 2024년엔 <strong>쿠팡 배달</strong>을 했습니다. 하루 14시간씩 오토바이를 탔습니다. 그 틈에 유튜브를 시작했고, 2024년 12월부터는 아예 본업으로 바꿨습니다.</p>
-      <p>그 뒤로 채널을 100개 넘게 열고, 대부분을 접었습니다. <span class="hl">무엇이 되고 무엇이 안 되는지</span>는 그렇게 몸으로 배웠습니다.</p>
-      <p>바쁜 사장님 마음을 압니다. 저도 배달 끝나고 밤에 영상을 만들었으니까요. 그래서 그 시간을 대신 써 드리기로 했습니다.</p>
-      <p>꼭 저와 일하지 않으셔도 괜찮습니다. 다만 샘플 한 편은 받아 보시고 판단하셨으면 합니다.</p>
+    <div class="creator-v">
+      <p class="cv-h">빈이파파 유튜브에서 직접 보여드린 영상</p>
+      <div class="vrow three">
+        <div class="vslot wide" data-yt="rHIUsxpQEG8" data-src=""><div class="vbox"><img src="samples/yt_rHIUsxpQEG8.jpg" alt="빈이파파 유튜브 대표 영상 1" loading="lazy"><span class="ph">대표 영상 1</span><i class="play"></i></div><p class="vcap"><b>AI 일본 경제 유튜브 5분 자동 제작</b>조회수 1만 회 이상</p></div>
+        <div class="vslot wide" data-yt="guNkLZWKmjU" data-src=""><div class="vbox"><img src="samples/yt_guNkLZWKmjU.jpg" alt="빈이파파 유튜브 대표 영상 2" loading="lazy"><span class="ph">대표 영상 2</span><i class="play"></i></div><p class="vcap"><b>구글 AI 에이전트 오팔 완벽 가이드</b>조회수 7,700회 이상</p></div>
+        <div class="vslot wide" data-yt="qs7aVj0_Xgs" data-src=""><div class="vbox"><img src="samples/yt_qs7aVj0_Xgs.jpg" alt="빈이파파 유튜브 대표 영상 3" loading="lazy"><span class="ph">대표 영상 3</span><i class="play"></i></div><p class="vcap"><b>AI로 떡상 영상 쉽게 만들기</b>조회수 2,500회 이상</p></div>
+      </div>
     </div>
     <div class="cta"><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd1qi2s91iR-OJTnCm0PlbsiFs2QDVlqBCcyeTWVgJ8qmVJ5g/viewform" target="_blank" rel="noopener">무료 샘플 신청하기</a></div>
   </div>
@@ -322,11 +461,11 @@
 <section>
   <div class="wrap">
     <span class="label">COMPARE</span>
-    <h2>직접 vs 일반 외주 vs 빈이파파</h2>
+    <h2>직접 vs 일반 외주 vs 콘텐츠 발전소</h2>
     <p class="lead">같은 돈과 시간을 쓴다면, 어디에 맡기는 게 나을까요?</p>
     <div class="tbl-wrap">
       <table>
-        <thead><tr><th></th><th>직접 하기</th><th>일반 외주</th><th class="us">빈이파파</th></tr></thead>
+        <thead><tr><th></th><th>직접 하기</th><th>일반 외주</th><th class="us">콘텐츠 발전소</th></tr></thead>
         <tbody>
           <tr><th>기획</th><td>혼자 고민, 소재 고갈</td><td>주는 대로 편집만</td><td class="us">업종 분석 후 한 달 치 기획</td></tr>
           <tr><th>대본</th><td>직접 써야 함</td><td>대부분 미포함</td><td class="us">후킹·구조 잡힌 대본 포함</td></tr>
@@ -398,11 +537,48 @@
   <div class="wrap">
     <p class="disc">※ 조회수·매출 등 성과는 보장하지 않습니다. 수익 숫자는 개별 사례입니다.</p>
     <p>표시 가격은 시작가이며 부가세 별도입니다. 정확한 금액은 상담 후 견적으로 안내드립니다.</p>
-    <p>운영 ㈜유벤져스 · 빈이파파</p>
+    <p class="foot-brand">콘텐츠 발전소 <span>CONTENT BALJEONSO</span></p>
+    <p>운영 ㈜유벤져스 · 대표 크리에이터 빈이파파</p>
   </div>
 </footer>
 
 <div class="fab"><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSd1qi2s91iR-OJTnCm0PlbsiFs2QDVlqBCcyeTWVgJ8qmVJ5g/viewform" target="_blank" rel="noopener">무료 샘플 신청하기</a></div>
 
+<script>
+(function(){
+  // 샘플 영상 자리: data-yt(유튜브 ID) 또는 data-src(mp4) 가 있으면 채워서 재생
+  document.querySelectorAll('.vslot').forEach(function(el){
+    var yt=el.dataset.yt, src=el.dataset.src, box=el.querySelector('.vbox');
+    if(!yt && !src) return;
+    el.classList.add('filled');
+    if(yt && !box.querySelector('img')){var im=document.createElement('img');im.src='https://i.ytimg.com/vi/'+yt+'/hqdefault.jpg';im.alt='';im.loading='lazy';im.style.opacity=1;box.prepend(im);}
+    box.addEventListener('click',function(){
+      if(el.classList.contains('playing')) return;
+      el.classList.add('playing');
+      var m;
+      if(yt){m=document.createElement('iframe');m.src='https://www.youtube-nocookie.com/embed/'+yt+'?autoplay=1&playsinline=1&rel=0';m.allow='autoplay; encrypted-media; picture-in-picture';m.allowFullscreen=true;}
+      else{m=document.createElement('video');m.src=src;m.controls=true;m.autoplay=true;m.playsInline=true;m.setAttribute('controlsList','nodownload noplaybackrate');m.disablePictureInPicture=true;m.addEventListener('contextmenu',function(e){e.preventDefault();});}
+      box.appendChild(m);
+    });
+  });
+  // 영상이 아직 없는 칸은 숨기고, 다 비면 묶음·탭도 숨김
+  document.querySelectorAll('.vslot:not(.filled)').forEach(function(el){el.style.display='none';});
+  document.querySelectorAll('.pf-group').forEach(function(g){
+    if(!g.querySelector('.vslot.filled')){g.style.display='none';g.dataset.empty='1';var t=document.querySelector('.tab[data-f="'+g.dataset.g+'"]');if(t)t.style.display='none';}
+  });
+  if(document.querySelectorAll('.pf-group:not([data-empty])').length<2){var tb=document.querySelector('.tabs');if(tb)tb.style.display='none';}
+  document.querySelectorAll('.vgrid').forEach(function(g){var n=g.querySelectorAll('.vslot.filled').length;if(n&&n<4){g.style.gridTemplateColumns='repeat('+n+',minmax(0,280px))';g.style.justifyContent='center';}});
+  document.querySelectorAll('.creator-v').forEach(function(c){if(!c.querySelector('.vslot.filled'))c.style.display='none';});
+  // 탭 필터
+  document.querySelectorAll('.tab').forEach(function(t){
+    t.addEventListener('click',function(){
+      document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});
+      t.classList.add('on');
+      var f=t.dataset.f;
+      document.querySelectorAll('.pf-group').forEach(function(g){g.style.display=(f==='all'||g.dataset.g===f)?'':'none'});
+    });
+  });
+})();
+</script>
 </body>
 </html>
