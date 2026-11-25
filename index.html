@@ -308,9 +308,9 @@ html{scroll-padding-top:100px}.preview-bar{background:#27334a;color:#fff;text-al
           <div class="vbox"><img src="samples/food_asia.jpg" alt="외식 브랜드 시즌 메뉴 광고 표지" loading="lazy"><span class="ph">샘플 영상<br>준비 중</span><i class="play"></i><em>외식 브랜드 · 30초</em></div>
           <p class="vcap"><b>외식 브랜드</b>시즌 신메뉴를 여행 이야기로</p>
         </div>
-        <div class="vslot short" data-cat="short" data-yt="" data-src="">
-          <div class="vbox"><img src="samples/beauty.jpg" alt="뷰티샵 샘플 표지" loading="lazy"><span class="ph">샘플 영상<br>준비 중</span><i class="play"></i><em>뷰티샵</em></div>
-          <p class="vcap"><b>뷰티샵</b>이번 달 디자인 고르기</p>
+        <div class="vslot short" data-cat="short" data-yt="" data-src="samples/beauty.mp4">
+          <div class="vbox"><img src="samples/beauty.jpg" alt="뷰티샵 속눈썹 펌 손님 셀카형 광고 표지" loading="lazy"><span class="ph">샘플 영상<br>준비 중</span><i class="play"></i><em>뷰티샵 · 15초</em></div>
+          <p class="vcap"><b>뷰티샵</b>속눈썹 펌을 막 끝낸 손님의 누운 셀카 「컬 좀 보세요」</p>
         </div>
         <div class="vslot short" data-cat="short" data-yt="" data-src="samples/academy.mp4">
           <div class="vbox"><img src="samples/academy.jpg" alt="영어학원 수업 현장 나레이션 광고 표지" loading="lazy"><span class="ph">샘플 영상<br>준비 중</span><i class="play"></i><em>학원 · 35초</em></div>
@@ -426,7 +426,7 @@ html{scroll-padding-top:100px}.preview-bar{background:#27334a;color:#fff;text-al
 
 (function(){
 const form=document.getElementById('request-form'), sampleSelect=document.getElementById('sample-select');
-const meta={nursing_home:['요양원','보호자 공감형'],dental:['치과','원장 대사형'],interior:['인테리어','공정별 결제 안내형'],move_in_cleaning:['입주청소','질문·답변형'],apartment:['아파트 분양','공간 소개형'],dermatology:['피부관리','부부 콩트형'],law_office:['법률사무소','카페 대담형'],law_qa:['법률사무소','질문·답변형'],tax_office:['세무회계','좌우 대화형'],korean_medicine:['한의원','원장 브이로그형'],orthopedics:['정형외과','원장 해설 분할형'],food_asia:['외식 브랜드','브랜드 이야기형'],academy:['학원','원장 나레이션형']};
+const meta={nursing_home:['요양원','보호자 공감형'],dental:['치과','원장 대사형'],interior:['인테리어','공정별 결제 안내형'],move_in_cleaning:['입주청소','질문·답변형'],apartment:['아파트 분양','공간 소개형'],dermatology:['피부관리','부부 콩트형'],law_office:['법률사무소','카페 대담형'],law_qa:['법률사무소','질문·답변형'],tax_office:['세무회계','좌우 대화형'],korean_medicine:['한의원','원장 브이로그형'],orthopedics:['정형외과','원장 해설 분할형'],food_asia:['외식 브랜드','브랜드 이야기형'],academy:['학원','원장 나레이션형'],beauty:['뷰티샵','손님 셀카형']};
 document.querySelectorAll('#portfolio .vslot.filled').forEach(function(el){
 const key=(el.dataset.src||'').split('/').pop().replace('.mp4',''), info=meta[key];if(!info)return;
 const label=info[0]+' · '+info[1];const option=document.createElement('option');option.value=label;option.textContent=label;sampleSelect.append(option);
