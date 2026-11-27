@@ -326,9 +326,13 @@ html{scroll-padding-top:100px}.preview-bar{background:#27334a;color:#fff;text-al
           <div class="vbox"><img src="samples/academy.jpg" alt="영어학원 수업 현장 나레이션 광고 표지" loading="lazy"><span class="ph">샘플 영상</span><i class="play"></i><em>학원 · 35초</em></div>
           <p class="vcap"><b>학원</b>수업 현장과 차분한 원장 목소리로 전하는 영어 공부 습관</p>
         </div>
-        <div class="vslot short" data-cat="short" data-yt="" data-src="" hidden>
-          <div class="vbox"><span class="ph">샘플 영상<br>준비 중</span><i class="play"></i><em>헬스·필라테스</em></div>
-          <p class="vcap"><b>헬스·필라테스</b>전후 변화와 수업 분위기</p>
+        <div class="vslot short" data-cat="short" data-yt="" data-src="samples/gym.mp4">
+          <div class="vbox"><img src="samples/gym.jpg" alt="소그룹PT 코치와 회원이 같이 벽 앉기로 버티는 광고 표지" loading="lazy"><span class="ph">샘플 영상</span><i class="play"></i><em>헬스 · 13초</em></div>
+          <p class="vcap"><b>헬스</b>포기하고 싶던 순간 옆에서 같이 버텨 주는 소그룹PT</p>
+        </div>
+        <div class="vslot short" data-cat="short" data-yt="" data-src="samples/pilates.mp4">
+          <div class="vbox"><img src="samples/pilates.jpg" alt="필라테스 강사가 회원 무릎을 짚어 주는 수업 광고 표지" loading="lazy"><span class="ph">샘플 영상</span><i class="play"></i><em>필라테스 · 22초</em></div>
+          <p class="vcap"><b>필라테스</b>번호 자막 다섯 줄로 보여 주는 첫 수업의 세심함</p>
         </div>
         <div class="vslot short" data-cat="short" data-yt="" data-src="" hidden>
           <div class="vbox"><span class="ph">샘플 영상<br>준비 중</span><i class="play"></i><em>쇼핑몰 제품</em></div>
@@ -466,7 +470,7 @@ html{scroll-padding-top:100px}.preview-bar{background:#27334a;color:#fff;text-al
 const form=document.getElementById('request-form'), msg=form.elements.message;
 const ACTION='https://docs.google.com/forms/d/e/1FAIpQLScYd_abDrrNf-VhE6ucfRr9TJ86oGgZl-ZumsKFZVGjhY6vBw/formResponse';
 const E={name:'entry.527505379',email:'entry.1517512173',channel:'entry.1793762725',industry:'entry.1062808994',want:'entry.1456961208',message:'entry.460466025',source:'entry.2042690629',consent:'entry.852762130'};
-const meta={nursing_home:['요양원','보호자 공감형'],dental:['치과','원장 대사형'],interior:['인테리어','공정별 결제 안내형'],move_in_cleaning:['입주청소','질문·답변형'],apartment:['아파트 분양','공간 소개형'],dermatology:['피부관리','부부 콩트형'],law_office:['법률사무소','카페 대담형'],law_qa:['법률사무소','질문·답변형'],tax_office:['세무회계','좌우 대화형'],korean_medicine:['한의원','원장 브이로그형'],orthopedics:['정형외과','원장 해설 분할형'],food_asia:['외식 브랜드','브랜드 이야기형'],academy:['학원','원장 나레이션형'],beauty:['뷰티샵','손님 셀카형']};
+const meta={nursing_home:['요양원','보호자 공감형'],dental:['치과','원장 대사형'],interior:['인테리어','공정별 결제 안내형'],move_in_cleaning:['입주청소','질문·답변형'],apartment:['아파트 분양','공간 소개형'],dermatology:['피부관리','부부 콩트형'],law_office:['법률사무소','카페 대담형'],law_qa:['법률사무소','질문·답변형'],tax_office:['세무회계','좌우 대화형'],korean_medicine:['한의원','원장 브이로그형'],orthopedics:['정형외과','원장 해설 분할형'],food_asia:['외식 브랜드','브랜드 이야기형'],academy:['학원','원장 나레이션형'],beauty:['뷰티샵','손님 셀카형'],gym:['헬스','코치 동행형'],pilates:['필라테스','번호 리스트형']};
 function prefill(line){const v=msg.value.trim();if(!v.includes(line))msg.value=v?v+'\n'+line:line;}
 document.querySelectorAll('#portfolio .vslot.filled').forEach(function(el){
 const key=(el.dataset.src||'').split('/').pop().replace('.mp4',''), info=meta[key];if(!info)return;
